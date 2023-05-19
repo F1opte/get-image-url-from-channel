@@ -18,7 +18,7 @@ def get_url():
 
 get_url()
 for _ in c:
-    r = session.post(b, json={"content":_})
+    r = req.post(b, json={"content":_})
     if r.status_code == 204:
         print(f"{colorama.Fore.LIGHTGREEN_EX}SENT {colorama.Fore.LIGHTYELLOW_EX}- {colorama.Fore.LIGHTWHITE_EX}{_}")
     elif "retry_after" in r.text:
